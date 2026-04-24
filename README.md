@@ -1,24 +1,40 @@
-# AARA
+# AARA 👗
 
-**AARA** is a sophisticated mobile application built with the **Flutter** framework, designed to provide a high-performance, cross-platform experience. The project emphasizes a clean architecture and a modern, high-quality UI.
+**AARA** is a modern fashion store mobile application built using **Flutter** and powered by **Firebase**. It delivers a smooth, scalable, and real-time shopping experience with a clean and elegant UI.
 
 ---
 
 ## 🚀 Key Features
 
-* **Cross-Platform Performance:** Seamlessly targets both Android and iOS from a single codebase.
-* **Dynamic UI:** Features a modern, minimal interface with a focus on clean silhouettes and cinematic accents.
-* **Real-time Data:** Integration with a robust backend for live updates and data persistence.
-* **Scalable Architecture:** Clean separation of concerns between business logic and UI components.
+- ✨ **Cross-Platform:** Works seamlessly on Android & iOS
+- 🎨 **Modern UI:** Minimal, aesthetic fashion-focused design
+- 🔥 **Firebase Integration:**
+  - Authentication (Login / Signup)
+  - Firestore real-time database
+  - Cloud storage (for images)
+- ⚡ **Real-Time Updates:** Instant product & user data sync
+- 🧠 **Scalable Architecture:** Clean separation of UI, logic, and data
 
 ---
 
 ## 🛠 Tech Stack
 
-* **Frontend:** [Flutter](https://flutter.dev/) (Dart)
-* **Backend:** Node.js / Express.js
-* **Database:** MongoDB
-* **State Management:** Provider / Bloc / Riverpod
+- **Frontend:** Flutter (Dart)
+- **Backend:** Firebase
+- **Database:** Cloud Firestore
+- **Authentication:** Firebase Auth
+- **State Management:** Provider 
+
+---
+
+## 📱 Screens Included
+
+- Home Screen
+- Product Listing
+- Product Details
+- Cart
+- Authentication (Login / Signup)
+- Profile
 
 ---
 
@@ -26,38 +42,16 @@
 
 ### Prerequisites
 
-* **Flutter SDK** (Latest Stable)
-* **Dart SDK**
-* **Android Studio** or **VS Code**
-* A running instance of the AARA backend API
-
-### Installation
-
-1.  **Clone the repository**
-    ```bash
-    git clone [https://github.com/Abdurrahman404/AARA-flutter-application-.git](https://github.com/Abdurrahman404/AARA-flutter-application-.git)
-    cd AARA-flutter-application-
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    flutter pub get
-    ```
-
-3.  **Run the application**
-    ```bash
-    flutter run
-    ```
+- Flutter SDK (Latest Stable)
+- Dart SDK
+- Android Studio / VS Code
+- Firebase Project Setup
 
 ---
 
-## 🏗 Project Structure
+### 🔧 Installation
 
-```text
-lib/
-├── core/          # App constants, themes, and utilities
-├── data/          # Models and API repositories
-├── providers/     # State management logic
-├── view/          # UI Screens (Home, Authentication, etc.)
-│   └── widgets/   # Reusable UI components
-└── main.dart      # Application entry point
+1. **Clone the repository**
+```bash
+git clone https://github.com/Abdurrahman404/AARA-flutter-application-.git
+cd AARA-flutter-application-
