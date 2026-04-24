@@ -1,0 +1,53 @@
+query AllProducts @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  products {
+    id
+    name
+    description
+    price
+    category
+    imageUrl
+  }
+}
+
+query MyOrders @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  orders(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    orderDate
+    totalAmount
+    status
+    orderItems {
+      quantity
+      priceAtTimeOfPurchase
+      product {
+        name
+      }
+    }
+  }
+}
+
+mutation AddItemToCart($cartId: UUID!, $productId: UUID!, $quantity: Int!, $priceAtTimeOfAddition: Float!) @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  cartItem_insert(
+    data: {
+      cartId: $cartId
+      productId: $productId
+      quantity: $quantity
+      priceAtTimeOfAddition: $priceAtTimeOfAddition
+    }
+  ) {
+    id
+  }
+}
+
+mutation CreateNewUser($email: String!, $passwordHash: String!, $firstName: String, $lastName: String) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  user_insert(
+    data: {
+      email: $email
+      passwordHash: $passwordHash
+      firstName: $firstName
+      lastName: $lastName
+      createdAt_expr: "request.time"
+    }
+  ) {
+    id
+  }
+}

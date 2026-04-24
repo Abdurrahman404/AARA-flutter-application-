@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "640247507565",
+    "project_id": "aara-58c45",
+    "storage_bucket": "aara-58c45.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640247507565:android:4b2d72d3678cd55c116d64",
+        "android_client_info": {
+          "package_name": "com.example.aara"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD26YDWQEp-vVGB3J09R24ugcwZSbNkbhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

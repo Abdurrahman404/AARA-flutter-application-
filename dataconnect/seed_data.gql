@@ -1,0 +1,103 @@
+mutation CreateDemoData @transaction @auth(level: USER, insecureReason: "This operation is for seeding data and should only be run by authenticated users.") {
+  user_insertMany(data: [
+    {
+      id: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      email: "alice@example.com",
+      passwordHash: "hash123",
+      createdAt: "2023-01-01T10:00:00Z",
+      firstName: "Alice",
+      lastName: "Smith",
+      shippingAddress: "123 Main St, Anytown, USA",
+      billingAddress: "123 Main St, Anytown, USA"
+    },
+    {
+      id: "b2c3d4e5-f6a7-8901-2345-67890abcdef0",
+      email: "bob@example.com",
+      passwordHash: "hash456",
+      createdAt: "2023-01-02T11:00:00Z",
+      firstName: "Bob",
+      lastName: "Johnson",
+      shippingAddress: "456 Oak Ave, Otherville, USA",
+      billingAddress: "456 Oak Ave, Otherville, USA"
+    }
+  ])
+  product_insertMany(data: [
+    {
+      id: "c3d4e5f6-a7b8-9012-3456-7890abcdef01",
+      name: "Wireless Headphones",
+      price: 99.99,
+      description: "High-quality wireless headphones with noise cancellation.",
+      category: "Electronics",
+      createdAt: "2023-01-03T12:00:00Z",
+      imageUrl: "https://example.com/headphones.jpg",
+      color: "Black",
+      size: "One Size",
+      material: "Plastic"
+    },
+    {
+      id: "d4e5f6a7-b8c9-0123-4567-890abcdef012",
+      name: "Smartwatch",
+      price: 199.99,
+      description: "Advanced smartwatch with fitness tracking and notifications.",
+      category: "Electronics",
+      createdAt: "2023-01-04T13:00:00Z",
+      imageUrl: "https://example.com/smartwatch.jpg",
+      color: "Silver",
+      size: "Small",
+      material: "Aluminum"
+    },
+    {
+      id: "e5f6a7b8-c9d0-1234-5678-90abcdef0123",
+      name: "Organic Coffee Beans",
+      price: 15.00,
+      description: "Premium organic coffee beans from sustainable farms.",
+      category: "Groceries",
+      createdAt: "2023-01-05T14:00:00Z",
+      imageUrl: "https://example.com/coffee.jpg",
+      color: "Brown",
+      size: "12 oz",
+      material: "Beans"
+    }
+  ])
+  cart_insert(data: {
+    id: "f6a7b8c9-d0e1-2345-6789-0abcdef01234",
+    userId: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    createdAt: "2023-01-06T15:00:00Z"
+  })
+  cartItem_insertMany(data: [
+    {
+      cartId: "f6a7b8c9-d0e1-2345-6789-0abcdef01234",
+      productId: "c3d4e5f6-a7b8-9012-3456-7890abcdef01",
+      quantity: 1,
+      priceAtTimeOfAddition: 99.99
+    },
+    {
+      cartId: "f6a7b8c9-d0e1-2345-6789-0abcdef01234",
+      productId: "d4e5f6a7-b8c9-0123-4567-890abcdef012",
+      quantity: 1,
+      priceAtTimeOfAddition: 199.99
+    }
+  ])
+  order_insert(data: {
+    id: "g7h8i9j0-k1l2-3456-7890-abcdef012345",
+    userId: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    orderDate: "2023-01-07T16:00:00Z",
+    totalAmount: 299.98,
+    shippingAddress: "123 Main St, Anytown, USA",
+    status: "Completed"
+  })
+  orderItem_insertMany(data: [
+    {
+      orderId: "g7h8i9j0-k1l2-3456-7890-abcdef012345",
+      productId: "c3d4e5f6-a7b8-9012-3456-7890abcdef01",
+      quantity: 1,
+      priceAtTimeOfPurchase: 99.99
+    },
+    {
+      orderId: "g7h8i9j0-k1l2-3456-7890-abcdef012345",
+      productId: "d4e5f6a7-b8c9-0123-4567-890abcdef012",
+      quantity: 1,
+      priceAtTimeOfPurchase: 199.99
+    }
+  ])
+}
