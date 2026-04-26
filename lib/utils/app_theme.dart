@@ -24,7 +24,7 @@ class AppTheme {
   static ThemeData get theme => ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.background,
-        colorScheme: ColorScheme.light(
+        colorScheme: const ColorScheme.light(
           primary: AppColors.primary,
           secondary: AppColors.accent,
           surface: AppColors.surface,

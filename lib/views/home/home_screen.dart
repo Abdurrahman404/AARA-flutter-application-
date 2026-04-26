@@ -318,9 +318,9 @@ class _HomeScreenState extends State<HomeScreen> {
       currentIndex: _navIndex,
       onTap: (i) {
         setState(() => _navIndex = i);
-        if (i == 1)
+        if (i == 1) {
           Navigator.pushNamed(context, AppRoutes.productListing);
-        else if (i == 2)
+        } else if (i == 2)
           Navigator.pushNamed(context, AppRoutes.cart);
         else if (i == 3)
           Navigator.pushNamed(context, AppRoutes.profile);

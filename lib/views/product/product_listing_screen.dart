@@ -122,7 +122,7 @@ class _ProductListingScreenState extends State<ProductListingScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.search_off, size: 64, color: AppColors.textLight),
+                const Icon(Icons.search_off, size: 64, color: AppColors.textLight),
                 const SizedBox(height: 16),
                 Text('No products found',
                     style: Theme.of(context).textTheme.titleMedium),
