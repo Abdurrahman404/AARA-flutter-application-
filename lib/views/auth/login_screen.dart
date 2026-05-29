@@ -35,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+<<<<<<< HEAD
   Future<void> _googleLogin() async {
     final vm = context.read<AuthViewModel>();
     final success = await vm.loginWithGoogle();
@@ -43,6 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,6 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: 60),
+<<<<<<< HEAD
                 Text('Welcome Back',
                     style: Theme.of(context).textTheme.displayMedium),
                 const SizedBox(height: 8),
@@ -85,6 +89,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 36),
 
                 // Email field
+=======
+                Text(
+                  'Welcome Back',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Sign in to continue',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 36),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 CustomTextField(
                   label: 'Email',
                   hint: 'you@example.com',
@@ -92,11 +108,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.emailAddress,
                   prefix: const Icon(Icons.email_outlined,
                       color: AppColors.textLight, size: 20),
+<<<<<<< HEAD
                   validator: (v) => v!.isEmpty ? 'Enter your email' : null,
                 ),
                 const SizedBox(height: 20),
 
                 // Password field
+=======
+                  validator: (v) =>
+                      v!.isEmpty ? 'Enter your email' : null,
+                ),
+                const SizedBox(height: 20),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 CustomTextField(
                   label: 'Password',
                   hint: '••••••••',
@@ -119,6 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       v!.length < 6 ? 'Minimum 6 characters' : null,
                 ),
                 const SizedBox(height: 12),
+<<<<<<< HEAD
 
                 // Forgot password
                 Align(
@@ -164,6 +188,46 @@ class _LoginScreenState extends State<LoginScreen> {
                 }),
 
                 // Sign In button
+=======
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    'Forgot Password?',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppColors.accent,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                ),
+                const SizedBox(height: 32),
+                Consumer<AuthViewModel>(
+                  builder: (ctx, vm, _) {
+                    if (vm.errorMessage != null) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 16),
+                        child: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: AppColors.error.withOpacity(0.08),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.error_outline,
+                                  color: AppColors.error, size: 18),
+                              const SizedBox(width: 8),
+                              Text(vm.errorMessage!,
+                                  style: const TextStyle(
+                                      color: AppColors.error, fontSize: 13)),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 Consumer<AuthViewModel>(
                   builder: (ctx, vm, _) => SizedBox(
                     width: double.infinity,
@@ -174,11 +238,17 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 20,
                               width: 20,
                               child: CircularProgressIndicator(
+<<<<<<< HEAD
                                   color: Colors.white, strokeWidth: 2))
+=======
+                                  color: Colors.white, strokeWidth: 2),
+                            )
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                           : const Text('Sign In'),
                     ),
                   ),
                 ),
+<<<<<<< HEAD
 
                 const SizedBox(height: 20),
 
@@ -235,14 +305,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 24),
 
                 // Sign Up link
+=======
+                const SizedBox(height: 24),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Don't have an account? ",
                         style: Theme.of(context).textTheme.bodyMedium),
                     GestureDetector(
+<<<<<<< HEAD
                       onTap: () =>
                           Navigator.pushNamed(context, AppRoutes.register),
+=======
+                      onTap: () => Navigator.pushNamed(
+                          context, AppRoutes.register),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                       child: Text(
                         'Sign Up',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -261,6 +339,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+<<<<<<< HEAD
 
   void _showForgotPasswordDialog(BuildContext context) {
     final ctrl = TextEditingController();
@@ -307,4 +386,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 }

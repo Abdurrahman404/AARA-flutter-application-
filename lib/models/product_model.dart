@@ -43,6 +43,7 @@ class Product {
   String get formattedPrice => 'Rs. ${price.toStringAsFixed(0)}';
   String get formattedOriginalPrice =>
       originalPrice != null ? 'Rs. ${originalPrice!.toStringAsFixed(0)}' : '';
+<<<<<<< HEAD
 
   // ── Firestore → Product ───────────────────────────────────────────────────
   factory Product.fromMap(String id, Map<String, dynamic> m) {
@@ -89,6 +90,11 @@ class Product {
 }
 
 // Mock product data — also used as seed data for Firestore
+=======
+}
+
+// Mock product data
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 class ProductData {
   static List<Product> get allProducts => [
         Product(

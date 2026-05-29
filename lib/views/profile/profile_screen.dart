@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
 import 'package:cached_network_image/cached_network_image.dart';
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 import '../../viewmodels/auth_viewmodel.dart';
 import '../../utils/app_theme.dart';
 import '../../utils/app_routes.dart';
@@ -40,14 +43,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.dispose();
   }
 
+<<<<<<< HEAD
   Future<void> _saveProfile() async {
     await context.read<AuthViewModel>().updateProfile(
+=======
+  void _saveProfile() {
+    context.read<AuthViewModel>().updateProfile(
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
           name: _nameCtrl.text.trim(),
           phone: _phoneCtrl.text.trim(),
           address: _addressCtrl.text.trim(),
           city: _cityCtrl.text.trim(),
         );
     setState(() => _editing = false);
+<<<<<<< HEAD
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: const Text('Profile updated'),
@@ -55,6 +64,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     ));
+=======
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('Profile updated'),
+        backgroundColor: AppColors.success,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+    );
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   }
 
   @override
@@ -109,6 +128,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
           return SingleChildScrollView(
             padding: const EdgeInsets.all(20),
+<<<<<<< HEAD
             child: Column(children: [
               _buildAvatar(user.name, user.photoUrl),
               const SizedBox(height: 28),
@@ -116,12 +136,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(height: 24),
               _buildMenuSection(context, vm),
             ]),
+=======
+            child: Column(
+              children: [
+                _buildAvatar(user.name),
+                const SizedBox(height: 28),
+                _buildInfoSection(context),
+                const SizedBox(height: 24),
+                _buildMenuSection(context, vm),
+              ],
+            ),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
           );
         },
       ),
     );
   }
 
+<<<<<<< HEAD
   Widget _buildAvatar(String name, String? photoUrl) {
     final initials = name
         .trim()
@@ -164,6 +196,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
         style: Theme.of(context).textTheme.bodyMedium,
       ),
     ]);
+=======
+  Widget _buildAvatar(String name) {
+    final initials = name.trim().split(' ').map((w) => w.isNotEmpty ? w[0] : '').take(2).join().toUpperCase();
+    return Column(
+      children: [
+        Container(
+          width: 88,
+          height: 88,
+          decoration: BoxDecoration(
+            color: AppColors.accent.withOpacity(0.15),
+            shape: BoxShape.circle,
+            border: Border.all(color: AppColors.accent, width: 2),
+          ),
+          child: Center(
+            child: Text(
+              initials,
+              style: GoogleFonts.playfairDisplay(
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
+                color: AppColors.accent,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
+        Text(name, style: Theme.of(context).textTheme.displaySmall),
+        Text(
+          context.read<AuthViewModel>().currentUser?.email ?? '',
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ],
+    );
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   }
 
   Widget _buildInfoSection(BuildContext context) {
@@ -182,6 +247,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const SizedBox(height: 20),
           if (_editing) ...[
             CustomTextField(
+<<<<<<< HEAD
                 label: 'Full Name', hint: 'Your name', controller: _nameCtrl),
             const SizedBox(height: 16),
             CustomTextField(
@@ -197,6 +263,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 16),
             CustomTextField(
                 label: 'City', hint: 'Colombo', controller: _cityCtrl),
+=======
+              label: 'Full Name',
+              hint: 'Your name',
+              controller: _nameCtrl,
+            ),
+            const SizedBox(height: 16),
+            CustomTextField(
+              label: 'Phone',
+              hint: '07X XXX XXXX',
+              controller: _phoneCtrl,
+              keyboardType: TextInputType.phone,
+            ),
+            const SizedBox(height: 16),
+            CustomTextField(
+              label: 'Address',
+              hint: 'Street address',
+              controller: _addressCtrl,
+            ),
+            const SizedBox(height: 16),
+            CustomTextField(
+              label: 'City',
+              hint: 'Colombo',
+              controller: _cityCtrl,
+            ),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
           ] else ...[
             _infoRow(context, Icons.person_outline, 'Name',
                 _nameCtrl.text.isEmpty ? '—' : _nameCtrl.text),
@@ -219,6 +310,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       BuildContext context, IconData icon, String label, String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
+<<<<<<< HEAD
       child: Row(children: [
         Icon(icon, size: 18, color: AppColors.accent),
         const SizedBox(width: 12),
@@ -290,6 +382,91 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       const SizedBox(height: 32),
     ]);
+=======
+      child: Row(
+        children: [
+          Icon(icon, size: 18, color: AppColors.accent),
+          const SizedBox(width: 12),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(label,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(color: AppColors.textLight)),
+              Text(value, style: Theme.of(context).textTheme.bodyLarge),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _divider() =>
+      const Divider(height: 1, color: AppColors.divider);
+
+  Widget _buildMenuSection(BuildContext context, AuthViewModel vm) {
+    final items = [
+      {'icon': Icons.shopping_bag_outlined, 'label': 'My Orders', 'onTap': () {}},
+      {'icon': Icons.favorite_outline, 'label': 'Wishlist', 'onTap': () {}},
+      {'icon': Icons.location_on_outlined, 'label': 'Saved Addresses', 'onTap': () {}},
+      {'icon': Icons.notifications_outlined, 'label': 'Notifications', 'onTap': () {}},
+      {'icon': Icons.help_outline, 'label': 'Help & Support', 'onTap': () {}},
+    ];
+
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: AppColors.surface,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.divider),
+          ),
+          child: Column(
+            children: items.asMap().entries.map((e) {
+              final item = e.value;
+              return Column(
+                children: [
+                  ListTile(
+                    leading: Icon(item['icon'] as IconData,
+                        color: AppColors.textMid, size: 20),
+                    title: Text(item['label'] as String,
+                        style: Theme.of(context).textTheme.bodyLarge),
+                    trailing: const Icon(Icons.chevron_right,
+                        color: AppColors.textLight, size: 20),
+                    onTap: item['onTap'] as VoidCallback,
+                  ),
+                  if (e.key < items.length - 1)
+                    const Divider(
+                        height: 1, indent: 56, color: AppColors.divider),
+                ],
+              );
+            }).toList(),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Container(
+          decoration: BoxDecoration(
+            color: AppColors.surface,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.divider),
+          ),
+          child: ListTile(
+            leading:
+                const Icon(Icons.logout, color: AppColors.error, size: 20),
+            title: Text('Sign Out',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(color: AppColors.error)),
+            onTap: () => _confirmLogout(context, vm),
+          ),
+        ),
+        const SizedBox(height: 32),
+      ],
+    );
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   }
 
   void _confirmLogout(BuildContext context, AuthViewModel vm) {
@@ -308,8 +485,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Navigator.pop(ctx);
               Navigator.pushReplacementNamed(context, AppRoutes.login);
             },
+<<<<<<< HEAD
             child: const Text('Sign Out',
                 style: TextStyle(color: AppColors.error)),
+=======
+            child:
+                const Text('Sign Out', style: TextStyle(color: AppColors.error)),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
           ),
         ],
       ),

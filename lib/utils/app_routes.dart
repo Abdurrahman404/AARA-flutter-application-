@@ -9,6 +9,7 @@ class AppRoutes {
   static const String checkout = '/checkout';
   static const String profile = '/profile';
   static const String orderSuccess = '/order-success';
+<<<<<<< HEAD
 
   // Profile sub-screens
   static const String orders = '/orders';
@@ -16,4 +17,6 @@ class AppRoutes {
   static const String savedAddresses = '/saved-addresses';
   static const String notifications = '/notifications';
   static const String helpSupport = '/help-support';
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 }

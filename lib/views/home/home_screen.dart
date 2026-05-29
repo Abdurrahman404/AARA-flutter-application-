@@ -95,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+<<<<<<< HEAD
       body: Consumer<ProductViewModel>(
         builder: (ctx, vm, _) {
           if (vm.isLoading) {
@@ -110,6 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           }
           return SingleChildScrollView(
+=======
+      body: SingleChildScrollView(
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -137,8 +141,11 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 32),
           ],
         ),
+<<<<<<< HEAD
       );
         },
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
       ),
       bottomNavigationBar: _buildBottomNav(),
     );
@@ -314,7 +321,11 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (ctx, vm, _) {
         final newItems = vm.newArrivals;
         return SizedBox(
+<<<<<<< HEAD
           height: 300,
+=======
+          height: 320,
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
           child: ListView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             scrollDirection: Axis.horizontal,
@@ -334,9 +345,15 @@ class _HomeScreenState extends State<HomeScreen> {
       currentIndex: _navIndex,
       onTap: (i) {
         setState(() => _navIndex = i);
+<<<<<<< HEAD
         if (i == 1)
           Navigator.pushNamed(context, AppRoutes.productListing);
         else if (i == 2)
+=======
+        if (i == 1) {
+          Navigator.pushNamed(context, AppRoutes.productListing);
+        } else if (i == 2)
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
           Navigator.pushNamed(context, AppRoutes.cart);
         else if (i == 3)
           Navigator.pushNamed(context, AppRoutes.profile);

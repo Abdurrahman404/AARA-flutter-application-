@@ -39,6 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
   }
 
+<<<<<<< HEAD
   Future<void> _googleSignIn() async {
     final vm = context.read<AuthViewModel>();
     final success = await vm.loginWithGoogle();
@@ -47,6 +48,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
   }
 
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +74,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Text('Join AARA and discover exclusive fashion',
                     style: Theme.of(context).textTheme.bodyMedium),
                 const SizedBox(height: 36),
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 CustomTextField(
                   label: 'Full Name',
                   hint: 'Your full name',
@@ -88,7 +94,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   keyboardType: TextInputType.emailAddress,
                   prefix: const Icon(Icons.email_outlined,
                       color: AppColors.textLight, size: 20),
+<<<<<<< HEAD
                   validator: (v) => v!.isEmpty ? 'Enter your email' : null,
+=======
+                  validator: (v) =>
+                      v!.isEmpty ? 'Enter your email' : null,
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 ),
                 const SizedBox(height: 20),
                 CustomTextField(
@@ -124,6 +135,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       v != _passCtrl.text ? 'Passwords do not match' : null,
                 ),
                 const SizedBox(height: 36),
+<<<<<<< HEAD
 
                 // Error
                 Consumer<AuthViewModel>(builder: (ctx, vm, _) {
@@ -145,6 +157,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 }),
 
                 // Create Account button
+=======
+                Consumer<AuthViewModel>(
+                  builder: (ctx, vm, _) {
+                    if (vm.errorMessage != null) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 16),
+                        child: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: AppColors.error.withOpacity(0.08),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(vm.errorMessage!,
+                              style: const TextStyle(color: AppColors.error)),
+                        ),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 Consumer<AuthViewModel>(
                   builder: (ctx, vm, _) => SizedBox(
                     width: double.infinity,
@@ -155,11 +188,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               height: 20,
                               width: 20,
                               child: CircularProgressIndicator(
+<<<<<<< HEAD
                                   color: Colors.white, strokeWidth: 2))
+=======
+                                  color: Colors.white, strokeWidth: 2),
+                            )
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                           : const Text('Create Account'),
                     ),
                   ),
                 ),
+<<<<<<< HEAD
 
                 const SizedBox(height: 20),
 
@@ -213,6 +252,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const SizedBox(height: 24),
 
+=======
+                const SizedBox(height: 24),
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -4,8 +4,11 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../models/product_model.dart';
 import '../utils/app_theme.dart';
 import '../utils/app_routes.dart';
+<<<<<<< HEAD
 import 'package:provider/provider.dart';
 import '../viewmodels/wishlist_viewmodel.dart';
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -71,6 +74,7 @@ class ProductCard extends StatelessWidget {
                     child:
                         _badge('-${product.discountPercent}%', AppColors.error),
                   ),
+<<<<<<< HEAD
                 Positioned(
                   bottom: 10,
                   right: 10,
@@ -102,6 +106,8 @@ class ProductCard extends StatelessWidget {
                     },
                   ),
                 ),
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
               ],
             ),
             Padding(

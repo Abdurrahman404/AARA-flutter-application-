@@ -3,7 +3,10 @@ import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../models/product_model.dart';
 import '../../viewmodels/cart_viewmodel.dart';
+<<<<<<< HEAD
 import '../../viewmodels/wishlist_viewmodel.dart';
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 import '../../utils/app_theme.dart';
 import '../../utils/app_routes.dart';
 import '../../widgets/common_widgets.dart';
@@ -103,6 +106,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             ),
           ),
         ),
+<<<<<<< HEAD
         const SizedBox(width: 4),
         Consumer<WishlistViewModel>(
           builder: (ctx, wishlist, _) {
@@ -134,6 +138,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             );
           },
         ),
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
         const SizedBox(width: 8),
       ],
       flexibleSpace: FlexibleSpaceBar(

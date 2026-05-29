@@ -5,6 +5,7 @@
 import FlutterMacOS
 import Foundation
 
+<<<<<<< HEAD
 import cloud_firestore
 import firebase_auth
 import firebase_core
@@ -21,4 +22,10 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   FLTGoogleSignInPlugin.register(with: registry.registrar(forPlugin: "FLTGoogleSignInPlugin"))
   SqflitePlugin.register(with: registry.registrar(forPlugin: "SqflitePlugin"))
   UrlLauncherPlugin.register(with: registry.registrar(forPlugin: "UrlLauncherPlugin"))
+=======
+import sqflite_darwin
+
+func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
+  SqflitePlugin.register(with: registry.registrar(forPlugin: "SqflitePlugin"))
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 }

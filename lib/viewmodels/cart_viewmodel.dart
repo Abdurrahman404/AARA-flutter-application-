@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+<<<<<<< HEAD
 import '../models/cart_item.dart';
 import '../models/product_model.dart';
 import '../models/order_model.dart';
@@ -6,12 +7,24 @@ import '../services/order_service.dart';
 
 class CartViewModel extends ChangeNotifier {
   final _orderService = OrderService();
+=======
+import '../models/cart_item_model.dart';
+import '../models/product_model.dart';
+
+class CartViewModel extends ChangeNotifier {
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   final List<CartItem> _items = [];
 
   List<CartItem> get items => List.unmodifiable(_items);
   int get itemCount => _items.fold(0, (sum, item) => sum + item.quantity);
 
+<<<<<<< HEAD
   double get subtotal => _items.fold(0, (sum, item) => sum + item.totalPrice);
+=======
+  double get subtotal =>
+      _items.fold(0, (sum, item) => sum + item.totalPrice);
+
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   double get deliveryFee => subtotal > 5000 ? 0 : 350;
   double get total => subtotal + deliveryFee;
 
@@ -21,6 +34,7 @@ class CartViewModel extends ChangeNotifier {
   String get formattedTotal => 'Rs. ${total.toStringAsFixed(0)}';
 
   void addItem(Product product, String size, String color) {
+<<<<<<< HEAD
     final idx = _items.indexWhere((item) =>
         item.id == product.id &&
         item.selectedSize == size &&
@@ -35,6 +49,18 @@ class CartViewModel extends ChangeNotifier {
         name: product.name,
         imageUrl: product.imageUrl,
         price: product.price,
+=======
+    final existingIndex = _items.indexWhere((item) =>
+        item.product.id == product.id &&
+        item.selectedSize == size &&
+        item.selectedColor == color);
+
+    if (existingIndex >= 0) {
+      _items[existingIndex].quantity++;
+    } else {
+      _items.add(CartItem(
+        product: product,
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
         selectedSize: size,
         selectedColor: color,
       ));
@@ -61,6 +87,7 @@ class CartViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+<<<<<<< HEAD
   bool containsProduct(String productId) =>
       _items.any((item) => item.product.id == productId);
 
@@ -105,5 +132,9 @@ class CartViewModel extends ChangeNotifier {
     } catch (e) {
       return null;
     }
+=======
+  bool containsProduct(String productId) {
+    return _items.any((item) => item.product.id == productId);
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
   }
 }

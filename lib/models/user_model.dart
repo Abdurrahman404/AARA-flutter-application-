@@ -5,7 +5,10 @@ class UserModel {
   String phone;
   String address;
   String city;
+<<<<<<< HEAD
   String? photoUrl;   // from Google profile or Firebase Storage
+=======
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 
   UserModel({
     required this.id,
@@ -14,6 +17,7 @@ class UserModel {
     this.phone = '',
     this.address = '',
     this.city = '',
+<<<<<<< HEAD
     this.photoUrl,
   });
 
@@ -41,4 +45,7 @@ class UserModel {
       'photoUrl': photoUrl,
     };
   }
+=======
+  });
+>>>>>>> 2e7c3c7aa8e9056bddd5feebd689e1a7245174b4
 }
